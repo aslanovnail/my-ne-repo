@@ -1,7 +1,7 @@
 [server]
 headless = true
-port = 10001
+port = 10000
 
 [browser]
 serverAddress = "localhost"
-serverPort = 10001
+serverPort = 10000
