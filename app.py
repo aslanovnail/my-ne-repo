@@ -1,11 +1,10 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
 st.header("Car Sales Data Analysis")
-df = pd.read_csv('/Users/nailaslanov/.vscode/car_sales/vehicles_us.csv')
+df = pd.read_csv('vehicles_us.csv')
 st.write("Data Overview")
 st.dataframe(df.head(10))
 st.write("Data Description")

@@ -1,20 +1,24 @@
-# Car Sales Data Explorer
+# Car Sales Analysis App
 
-This is a simple Streamlit app for exploring U.S. car sales data using interactive charts.
+This is a Streamlit web application that analyzes used car listings in the U.S. using the `vehicles_us.csv` dataset.
 
 ## Features
 
-- View a histogram of car prices
-- Toggle charts using checkboxes
-- Interactive charts built with Plotly
-- Streamlit web interface
+- View and filter used car data
+- Interactive charts and visualizations (e.g., price distribution, mileage vs. price)
+- Dynamic filtering by make, model, year, condition, and more
+- Powered by Streamlit and pandas
 
-## Installation
+## Dataset
 
-1. Clone the repository or download the project files.
+The dataset used is `vehicles_us.csv`, which contains information about used cars listed for sale in the U.S. including:
 
-2. Create a virtual environment (optional but recommended):
+- Make and model
+- Year
+- Price
+- Condition
+- Transmission
+- Fuel type
+- Odometer reading
+- Location and more
 
-```bash
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
