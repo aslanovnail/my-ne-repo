@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 st.title("Car Sales App")
 
@@ -22,15 +23,23 @@ except FileNotFoundError:
     plt.xlabel('Mileage')
     plt.ylabel('Price')
     st.pyplot()
-    show_type =st.checkbox('Show Car Type')
-    if show_type:
-        st.subheader('Car Type Distribution')
-        car_type_counts = df['type'].value_counts()
-        plt.figure(figsize=(10, 6))
-        plt.bar(car_type_counts.index, car_type_counts.values, color='orange', alpha=0.7)
-        plt.title('Car Type Distribution')
-        plt.xlabel('Car Type')
-        plt.ylabel('Count')
-        st.pyplot()
-    else:
-        st.write("Check the box to see the car type distribution.")
+    # Checkbox to exclude very expensive cars
+exclude_expensive = st.checkbox('Exclude cars priced above $50,000')
+
+# Filter data based on checkbox
+if exclude_expensive:
+    df = df[df['price'] <= 50000]
+    st.markdown("*Note:* Very expensive cars (over $50,000) are excluded.")
+
+# Histogram for 'price'
+st.subheader('Price Distribution')
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(df['price'], bins=30, color='blue', edgecolor='black')
+ax.set_title('Histogram of Car Prices')
+ax.set_xlabel('Price')
+ax.set_ylabel('Frequency')
+st.pyplot(fig)
+
+# Summary
+avg_price = int(df['price'].mean())
+st.markdown(f"*Average Price (after filter if applied):* ${avg_price:,}")

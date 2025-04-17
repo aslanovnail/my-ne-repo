@@ -5,6 +5,8 @@ This is a Streamlit web application that analyzes used car listings in the U.S. 
 ## Features
 
 - View and filter used car data
+- Found some missing values
+-Replaced missing values woth either '0', or "Unknown"
 - Interactive charts and visualizations (e.g., price distribution, mileage vs. price)
 - Dynamic filtering by make, model, year, condition, and more
 - Powered by Streamlit and pandas
